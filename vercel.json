@@ -45,9 +45,6 @@
     "env": {
       "NODE_VERSION": "16.x",
       "PYTHON_VERSION": "3.9"
-    },
-    "commands": [
-      "python manage.py collectstatic --noinput"
-    ]
+    }
   }
 }
