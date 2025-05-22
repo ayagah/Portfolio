@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Portflio_Project/wsgi.py",
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "pythonVersion": "3.9"
+      }
+    },
+    {
+      "src": "staticfiles/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "media/**",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/media/(.*)",
+      "dest": "/media/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Portflio_Project/wsgi.py"
+    }
+  ],
+  "env": {
+    "DJANGO_SETTINGS_MODULE": "Portflio_Project.settings",
+    "PYTHONPATH": "/var/task",
+    "SECRET_KEY": "django-insecure-*1^ghup%(k7uo7b9clmpn@9#=_-339py=#5njq=cv$kukiaw7z",
+    "DEBUG": "False",
+    "ALLOWED_HOSTS": ".vercel.app,.now.sh,localhost,127.0.0.1",
+    "CRISPY_ALLOWED_TEMPLATE_PACKS": "bootstrap5",
+    "CRISPY_TEMPLATE_PACK": "bootstrap5"
+  },
+  "build": {
+    "env": {
+      "NODE_VERSION": "16.x",
+      "PYTHON_VERSION": "3.9"
+    },
+    "commands": [
+      "python manage.py collectstatic --noinput"
+    ]
+  }
+}

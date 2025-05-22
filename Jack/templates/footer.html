@@ -1,0 +1,36 @@
+<footer class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>About Me</h5>
+                <p>I'm a passionate Telecommunication and Information Engineering student from JKUAT with a strong interest in web development. I specialize in building  web applications using Python and Django, with practical experience in creating systems for healthcare, transportation, and digital services. My work combines technical skills with real-world problem-solving, aiming to develop impactful, user-friendly solutions. I enjoy learning new technologies, exploring IoT and networking, and continuously improving my coding skills.</p>
+            </div>
+            <div class="col-md-4 mb-4 mb-md-0">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'projects' %}">Projects</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Connect</h5>
+                <div class="d-flex gap-3">
+                    {% if profile.github_url %}
+                    <a href="{{ profile.github_url }}"><i class="fab fa-github fa-2x"></i></a>
+                    {% endif %}
+                    {% if profile.linkedin_url %}
+                    <a href="{{ profile.linkedin_url }}"><i class="fab fa-linkedin fa-2x"></i></a>
+                    {% endif %}
+                    {% if profile.website_url %}
+                    <a href="{{ profile.website_url }}"><i class="fas fa-globe fa-2x"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+        <div class="text-center">
+            <p class="mb-0">&copy; {% now "Y" %} My Portfolio. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
