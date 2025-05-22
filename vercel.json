@@ -21,7 +21,8 @@
     },
     {
       "src": "/(.*)",
-      "dest": "Portflio_Project/wsgi.py"
+      "dest": "Portflio_Project/wsgi.py",
+      "methods": ["GET", "POST", "HEAD"]
     }
   ],
   "env": {
@@ -29,6 +30,14 @@
     "PYTHONPATH": "/var/task",
     "SECRET_KEY": "@django-secret-key",
     "DEBUG": "False",
-    "ALLOWED_HOSTS": ".vercel.app,.now.sh"
+    "ALLOWED_HOSTS": ".vercel.app,.now.sh",
+    "CRISPY_ALLOWED_TEMPLATE_PACKS": "bootstrap5",
+    "CRISPY_TEMPLATE_PACK": "bootstrap5"
+  },
+  "build": {
+    "env": {
+      "PYTHON_VERSION": "3.9",
+      "NODE_VERSION": "16.x"
+    }
   }
 }
