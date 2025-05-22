@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*1^ghup%(k7uo7b9clmpn@9#=_-339py=#5njq=cv$kukiaw7z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app","localhost","127.0.0.1:8000"]
+ALLOWED_HOSTS = [".vercel.app","localhost","127.0.0.1"]
 
 
 # Application definition
@@ -80,7 +80,7 @@ WSGI_APPLICATION = 'Portflio_Project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/tmp/db.sqlite3',  # Vercel requires /tmp
+        'NAME': BASE_DIR / 'db.sqlite3',  # Ensure this path is correct
     }
 }
 
@@ -133,3 +133,14 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
+# settings.py
+CONTACT_EMAIL = 'ayagajack@gmail.com'
+# settings.py
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # For Gmail (or your email provider's SMTP)
+EMAIL_PORT = 587  # TLS Port
+EMAIL_USE_TLS = True  # Enable TLS encryption
+EMAIL_HOST_USER = 'your-email@gmail.com'  # Your email
+EMAIL_HOST_PASSWORD = 'your-app-password'  # App password (NOT your regular password)
+DEFAULT_FROM_EMAIL = 'your-email@gmail.com'  # Default sender
+CONTACT_EMAIL = 'ayagajackl@gmail.com'  # Where contact form emails go
