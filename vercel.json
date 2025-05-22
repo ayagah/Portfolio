@@ -28,7 +28,7 @@
   "env": {
     "DJANGO_SETTINGS_MODULE": "Portflio_Project.settings",
     "PYTHONPATH": "/var/task",
-    "SECRET_KEY": "@django-secret-key",
+    "SECRET_KEY":  "django-insecure-*1^ghup%(k7uo7b9clmpn@9#=_-339py=#5njq=cv$kukiaw7z",
     "DEBUG": "False",
     "ALLOWED_HOSTS": ".vercel.app,.now.sh",
     "CRISPY_ALLOWED_TEMPLATE_PACKS": "bootstrap5",
